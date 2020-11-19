@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>News</title>
+  <!-- <link rel="shortcut icon" href="#"> -->
+  <link rel="stylesheet" href="/css/header.css" type="text/css">
+  <link rel="stylesheet" href="/css/nav.css" type="text/css">
+  <link rel="stylesheet" href="/css/news.css" type="text/css">
+  <link rel="stylesheet" href="/css/footer.css" type="text/css">
+  <script src="/Js/include.js" type="text/javascript"></script>
+</head>
+<body>
+  <header w3-include-html="/html/header.html"></header>
+  <nav w3-include-html="/html/nav.html"></nav>
+  <main>
+    <section> <!-- ejs 기능을 통하여 지정된 post 개수만큼 불러온다. recent의 경우에는 1개씩 불러옴 -->
+      <div id="newsWrapper">
+        <div id="newsLeft">
+            <div class="searchResult">
+            <% var len, postDate, imgSrc, title, description, category;%>
+            <% if(menuId == "recent") len = 1;
+            else len = newsData[1].length; %>
+            <% for(var i = 0 ; i < len ; i++){ %>
+              <% if(menuId == "recent"){
+                postDate = newsData[newsId]['postDate'];
+                imgSrc = newsData[newsId]['imageSrc'];
+                title = newsData[newsId]['title'];
+                description = newsData[newsId]['description'];
+                category = newsData[newsId]['category'];
+              } else {
+                postDate = newsData[1][i]['postDate'];
+                imgSrc = newsData[1][i]['imageSrc'];
+                title = newsData[1][i]['title'];
+                description = newsData[1][i]['description'];
+                category = newsData[1][i]['category'];
+              } %>
+              <div class="newsPostDate"><h1></h1><p><%=postDate%></p></div>
+              <div class="newsImage">
+                <img src="<%=imgSrc%>">
+              </div>
+              <div id="newsContent">
+                <h1 id="newsTitle"><%=title%></h1>
+                <% var name, href;
+                  href = "/news/category/" + category + "/1";
+                if(category == "Entertainment")
+                  name = "newsCategory wide";
+                else
+                  name = "newsCategory";%>
+                  <div class="<%=name%>"><a href="<%=href%>"><p><%=category%></p></a></div>
+                <p id="newsDescription"><%=description%></p>
+              </div>
+            <% } %>
+            <% if(menuId !="recent") {%>
+            <div class="newsPageList PageListBottom"><%= lastPageNum %></div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="newsPopUpButton" onclick="showNewsMenu()" onmouseover="showNewsMenu()"></div>
+  <div class="menuCloseDiv" onTouchStart="hideNewsMenu()" onTouchMove="hideNewsMenu()"></div>
+  <div class="newsRight" ontouchstart="onTouchStart(event)" ontouchmove="onTouchMove(event)" ontouchend ="onTouchEnd(event)" onmousewheel="onMouseWheel(event)">
+    <div class="moving" onmouseleave="hideNewsMenu()" >
+    <div id="recentWrapper">
+      <h1 onclick="clickMenu('recent')">Recent Posts</h1>
+      <div id="recentListWrapper">
+        <% var len, imgSrc, title, postDate;%>
+        <% if(menuId == "recent") len = newsData.length;
+        else len = newsData[0].length; %>
+        <% for(var i = 0 ; i < len ; i++){ %>
+          <% if(menuId == "recent"){
+            imgSrc = newsData[i]['thumbSrc'];
+            title = newsData[i]['title'];
+            postDate = newsData[i]['postDate'];
+          } else {
+            imgSrc = newsData[0][i]['thumbSrc'];
+            title = newsData[0][i]['title'];
+            postDate = newsData[0][i]['postDate'];
+          } %>
+            <a class="recentList" href="/news/recent/<%=(i+1)%>">
+              <img src="<%=imgSrc%>">
+              <p class="sendData"><%=title%></p>
+              <p class="sendData date"><%=postDate%></p>
+            </a>
+          <% } %>
+      </div>
+    </div>
+    <div id="categoryWrapper">
+      <h1 onclick="clickMenu('category')">Categories</h1>
+      <div id="categoryListWrapper">
+        <ul>
+          <li><a class="categoryList" href="/news/category/Travel/1"><p>Travel</p></a></li>
+          <li><a class="categoryList" href="/news/category/Living/1"><p>Living</p></a></li>
+          <li><a class="categoryList" href="/news/category/Entertainment/1"><p>Entertainment</p></a></li>
+          <li><a class="categoryList" href="/news/category/Food/1"><p>Food</p></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="searchWrapper">
+      <h1 onclick="clickMenu('search')">Search</h1>
+      <div id="searchListWrapper">
+        <div id="searchList">
+          <form id="searchForm" action="/news/search/1" method="get">
+            <input id="searchText" type="text" name="text"></input>
+            <div id="searchButton" onclick="submitForm(this)"></div>
+          </form>
+        </div>
+      </div>
+    </div> <!-- buttonFold는 현재 안쓰임 -->
+    <div id="buttonFold" onmouseover="foldMenu()" style="display:none"></div>
+    </div>
+  </div>
+  <footer w3-include-html="/html/footer.html"></footer>
+  <script src="/Js/header.js" type="text/javascript"></script>
+  <script src="/Js/nav.js" type="text/javascript"></script>
+  <script src="/Js/news.js" type="text/javascript"></script>
+  <script>
+    sendLastPageNum(<%=lastPageNum%>);
+    sendPageInfo('<%=menuId%>', '<%=keyword%>', '<%=newsId%>');
+  </script>
+</body>
+</html>

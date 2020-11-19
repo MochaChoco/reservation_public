@@ -1,0 +1,77 @@
+<section>
+	<div id="introduceTitle">
+		<div>Welcome</div>
+		<h1>The finest hotel with a beautiful view of Rome</h1>
+	</div>
+	<p>
+		Make your own memories in our most beautiful and special hotel. Enjoy differentiated</br>
+		facilities and top-of-the-line dishes for you. Marriage, travel, rest, everything changes</br>
+		to the best with our hotel. It'll give you the happiest experience you've ever had in life,</br>
+		and give you a boost to your weary daily life. We will always be waiting for you here.</br>
+		Don't forget that Starsis Hotel always with you.
+	</p>
+	<div id="introduceSlideWrapper">
+		<div id="introduceSlideGroup">		<!-- 처음 화면에 보여질 사진 4장, 이후에 돌려쓸 사진 4장 -->
+			<div id="introduceSlide">
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture1.jpg)">
+				</div>
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture2.jpg)">
+				</div>
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture3.jpg)">
+				</div>
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture4.jpg)">
+				</div>
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture1.jpg)">
+				</div>
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture2.jpg)">
+				</div>
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture3.jpg)">
+				</div>
+				<div class="introducePicture" style="background-image: url(../Images/introducePicture4.jpg)">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section>
+	<div id="discoverContents">
+		<div class="col_1">
+			<div class="row_1">
+				<h1>Hotel</h1>
+				<p>Discover Starsis Hotel</p>
+			</div>
+			<div class="row_2">
+				<p class="row_2_contentText">Our hotel is perfect for any party, marriage, or travel. You just have to join us. Take a look at this place that will be your best shelter.</p>
+				<div onClick="location.href='/rooms'"><p class="row_2_buttonText">Discover</p></div>
+			</div>
+		</div>
+		<div class="col_2">
+			<p>
+				Make your own memories in our most beautiful and special hotel.</br>
+				Enjoy differentiated facilities and top-of-the-line dishes for you. Marriage, travel, rest, everything changes
+				to the best with our hotel. It will give you the happiest experience you've ever had in life, and give you a boost to your weary daily life. We will always be waiting for you here.
+				Don't forget that Starsis Hotel always with you.
+		</div>
+	</div>
+	<div id="discoverSlideWrapper">
+		<div id="discoverSlide">
+			<div class="discoverPicture pictureClonded" style="background-image: url(../Images/discoverPicture3.jpg)">
+			</div>
+			<div class="discoverPicture" style="background-image: url(../Images/discoverPicture1.jpg)">
+			</div>
+			<div class="discoverPicture" style="background-image: url(../Images/discoverPicture2.jpg)">
+			</div>
+			<div class="discoverPicture" style="background-image: url(../Images/discoverPicture3.jpg)">
+			</div>
+			<div class="discoverPicture pictureClonded" style="background-image: url(../Images/discoverPicture1.jpg)">
+			</div>
+		</div>
+		<a class="slideButton prevSlideButton" onclick="slideButtonClick(1)">&#10094;</a>
+		<a class="slideButton nextSlideButton" onclick="slideButtonClick(-1)">&#10095;</a>
+		<div id="dotWrapper">
+				<span class="dot active" onclick="dotButtonClick(-1)"></span>
+				<span class="dot" onclick="dotButtonClick(-2)"></span>
+				<span class="dot" onclick="dotButtonClick(-3)"></span>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>reservation</title>
+  <!-- <link rel="shortcut icon" href="#"> -->
+  <link rel="stylesheet" href="/css/header.css" type="text/css">
+  <link rel="stylesheet" href="/css/nav.css" type="text/css">
+  <link rel="stylesheet" href="/css/reservation.css" type="text/css">
+  <link rel="stylesheet" href="/css/footer.css" type="text/css">
+  <script src="/Js/include.js" type="text/javascript"></script>
+</head>
+<body>
+  <header w3-include-html="/html/header.html"></header>
+  <nav w3-include-html="/html/nav.html"></nav>
+  <main>
+    <section>
+      <div class="listWrapper">
+        <h1>Search rooms</h1>
+        <div class="ceil">
+          <div class="menuNameWrapper">
+          <div class="fixMenuSize"><p>Check in</p></div>
+          <div class="fixMenuSize"><p>Check out</p></div>
+          <div class="fixMenuSize formSmall"><p>Adults</p></div>
+          <div class="fixMenuSize formSmall"><p>Children</p></div>
+          </div>
+        </div>
+        <div class="contents searchContents">
+          <form class="menuForm middleForm" action="/reservation" method="post">
+            <div class="fixMenuSize">
+              <input name="startDate" class="minDate navInputDate reservationInputDate" placeholder="Check In" type="text" onmouseover="onFocusMinDate(this)" value="<%=startDate%>">
+            </div>
+            <div class="fixMenuSize">
+              <input name="endDate" class="navInputDate reservationInputDate" placeholder="Check Out" type="text" onmouseover="onFocusMaxDate(this)" value="<%=endDate%>">
+            </div>
+            <div class="fixMenuSize formSmall">
+              <select name="adults" class="navInputSelect reservationInputSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div class="fixMenuSize formSmall">
+              <select name="children" class="navInputSelect reservationInputSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="inputData reservationButton buttonRight buttonSearch" onclick="reservationFormCheck(this)">
+          <p class="formContents">Search</p>
+        </div>
+      </div>
+      <div class="listWrapper">
+        <h1>Selected</h1>
+        <form class="bookForm" action="/reservation/book" method="post">
+          <input type="hidden" class="bookData" name="bookData" style="">
+          <div class="contents contentsFloor">
+            <div class="selectedContentWrapper">
+              <p class="noRoomsSelected">No Rooms selected</p>
+            </div>
+            <p class="resultPrice"></p>
+          </div>
+          </input>
+        </form>
+        <div class="inputData reservationButton buttonReset" onclick="resetButton(this)">
+          <p class="formContents">Reset</p>
+        </div>
+        <div class="inputData reservationButton buttonRight buttonBook" onclick="bookButton()">
+          <p class="formContents">Book</p>
+        </div>
+      </div>
+      <div class="listWrapper">
+        <h1>Available Rooms</h1>
+        <div class="contents avaliableList contentsFloor contentMargin">
+          <% for(i in avaliableList) { %>
+          <div class="rooms">
+            <img class="roomsImg"></img>
+            <div class="roomsContentWrapper">
+              <p class="roomsName"></p>
+              <p class="roomsDescription"></p>
+              <p class="roomsCount"></p>
+              <div class="roomsPrice"></div>
+              <div class="countWrapper">
+                <div class="buttonMinus" onclick="countButton(<%=i%>, 'minus')"></div>
+                <p class="countNum">1</p>
+                <div class="buttonPlus" onclick="countButton(<%=i%>, 'plus')"></div>
+              </div>
+              <div class="buttonAdd" onclick="addButton(<%=i%>)"><p>Add</p></div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+  </section>
+  </main>
+  <footer w3-include-html="/html/footer.html"></footer>
+  <script src="/Js/header.js" type="text/javascript"></script>
+  <script src="/Js/nav.js" type="text/javascript"></script>
+  <script src="/Js/reservation.js" type="text/javascript"></script>
+  <script>
+
+  /* 서버측에서 쿼리로 받아온 room 정보를 ejs에서 map형식으로 클라이언트에 전달함 */
+    var curDate = new Date();
+    var arr = new Array();
+
+    <%for(i in avaliableList) {%>
+        var map = new Map([
+          ['name', ''],
+          ['count', 0],
+          ['adult', 0],
+          ['child', 0],
+          ['price', 0]
+        ]);
+
+        map.set('name', '<%= avaliableList[i].get('name')%>');
+        map.set('count', <%= avaliableList[i].get('count')%>);
+        map.set('adult', <%= avaliableList[i].get('adult')%>);
+        map.set('child', <%= avaliableList[i].get('child')%>);
+        map.set('price', <%= avaliableList[i].get('price')%>);
+        arr.push(map);
+    <%}%>
+
+    var startDate = '<%=startDate%>';
+    var endDate = '<%=endDate%>';
+    var period = Math.abs((new Date(startDate) - new Date(endDate)) / (24 * 60 * 60 * 1000));
+    sendRoomsData(arr, '<%=startDate%>', '<%=endDate%>', period, <%=adults%>, <%=children%>);
+
+    /*nav에서 입력한 성인과 어린이 수를 세팅해줌*/
+    document.getElementsByClassName("menuForm")[0].adults.selectedIndex = <%=adults%> - 1;
+    document.getElementsByClassName("menuForm")[0].children.selectedIndex = <%=children%> - 1;
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<div id="navMenuWrapper">
+<!-- <div id="navMenuWrapper" onmouseover="showMenu()" onmouseout="hideMenu()"> -->
+    <img id="navMenuImg" src="/Images/arrowWhite.png" onclick="clickNavMenu()">
+    <form class="menuForm" action="/reservation" method="post">
+      <div class="inputData">
+        <input name="startDate" class="minDate navInputDate" placeholder="Check In" type="text" onfocus="onFocusMinDate(this)" onblur="(this.type='text')">
+      </div>
+      <div class="inputData">
+        <input name="endDate" class="navInputDate" placeholder="Check Out" type="text" onfocus="onFocusMaxDate(this)" onblur="(this.type='text')">
+      </div>
+      <div class="inputData">
+      <select name="adults" class="navInputSelect">
+        <option value="" selected disabled hidden>adults</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      </div>
+      <div class="inputData" class="navInputSelect">
+        <select name="children" class="navInputSelect">
+          <option value="" selected disabled hidden>children</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="inputData" onclick="reservationFormCheck(this)">
+        <p class="submitButton">Book now</p>
+      </div>
+    </form>
+</div>

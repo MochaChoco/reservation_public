@@ -1,0 +1,422 @@
+@charset "UTF-8";
+@font-face {
+	font-family: Cassandra;
+	src: url(/Font/CassandraPersonalUseRegular.ttf) format('woff');
+}
+@font-face {
+	font-family: CENTURY, serif;
+	src: url(/Font/CENTURY.ttf) format('ttf');
+}
+			/* 공식 구글 웹 폰트 사이트에서 받은 글꼴은 적용이 안됨*/
+			/* https://google-webfonts-helper.herokuapp.com/fonts 여기서 받아서 적용할 것 */
+@font-face {
+  font-family: 'Playball';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/Font/playball-v9-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Playball'), local('Playball-Regular'),
+       url('/Font/playball-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/Font/playball-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/Font/playball-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/Font/playball-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/Font/playball-v9-latin-regular.svg#Playball') format('svg'); /* Legacy iOS */
+}
+
+/* -----------------------------데스크탑 부분------------------------------------- */
+
+
+	/* 헤더 부분에서 전체적인 font size를 조절, 특별한 경우가 아닌 이상 여기서 다 조절함 */
+html{
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	font-size: 10px;
+}
+
+	/* 기본적으로 마진, 패딩을 모두 0으로 설정 */
+body, header, nav, section, footer, a, div, p, address, ul, li, h1, h2, h3{
+	margin: 0px;
+	padding: 0px;
+}
+	/* 기본적으로 리스트의 스타일이 안보이도록 설정 */
+ul, ol, li {
+	list-style: none;
+}
+
+#headerPopupButton{
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	width: 73px;
+	height: 75px;
+	border-right: solid 2px #FFBF00;
+	background-image: url('../Images/headerMenuIcon.png');
+	background-size: contain;
+}
+.headerTextWrapper{
+	display: inline-block;
+  position: absolute;
+	bottom: 0%;
+  left: 0%;
+  width: 19.4010vw;
+	height: 4.8828vw;
+  transition: opacity 1s;
+}
+
+.headerContentsWrapper{
+	z-index: 4;
+	position: fixed;
+	top: 0;
+	background: black;
+	opacity: 0.8;
+	width: 100%;
+	height: auto;
+	border-bottom: 2px solid #FFBF00;
+	transition: all 1s;
+}
+.resizeHeader{
+	top: -11.7188vw;
+}
+.headerLogo{
+	display: block;
+	position: relative;
+	width: 12.0443vw;
+	height: 11.3932vw;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 0.9766vw;
+}
+header ul {
+	display: inline-block;
+	margin: 0.6510vw 1.3021vw;
+}
+header li {
+	font-size: 2.0rem;
+	float: left;
+	text-align: center;
+	margin: 0 1.9531vw;
+	font-family: CENTURY, serif;
+}
+header a, .mobileBook{
+	text-decoration: none;
+	color: white;
+	transition: all 0.25s;
+}
+header a:hover, .mobileBook:hover{
+	color: #FFBF00;
+}
+.hiddenText{
+	opacity: 0;
+}
+.hiddenMenu{
+	display: none;
+}
+#headerTextImg{
+	display: inline-block;
+	position: absolute;
+	width: 3.6458vw;
+	height: 3.6458vw;
+	top: 60%;
+	left: 0%;
+	transform: translate(0, -50%);
+}
+#headerText{
+	display: inline-block;
+	position: absolute;
+	width: 250px;
+	top: 70%;
+	left: 3.1250vw;
+	transform: translate(0, -50%);
+	font-family: Cassandra;
+	font-size: 1.7578vw;
+	font-style: italic;
+	color: white;
+	text-align: left;
+}
+#headerLogoWrapper{
+	position: relative;
+	width: 100%;
+	transition: all 1s;
+}
+#headerMenuWrapper {
+	display: inline-block;
+	position: relative;
+	top: 0px;
+	left: 50%;
+	bottom: 5%;
+	transform: translateX(-50%);
+	z-index: 4;
+}
+#mainBanner{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+#mainBannerImg{
+	width: 100%;
+	margin: 0 auto;
+	filter: brightness(70%);
+	-webkit-filter: brightness(70%);
+}
+#mainBannerText{
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	width: 70.8281vw;
+  height: 16.2760vw;
+	transform: translate(-50%, -30%);
+	color: white;
+}
+#mainBannerText h1{
+	line-height: 1.6;
+	font-size: 5.2083vw;
+	font-family: Cassandra;
+	text-shadow: 0.5px 0.5px 1px gray;
+	transition: all 0.25s;
+}
+#mainBannerText p{
+	font-size: 1.4323vw;
+	transition: all 0.25s;
+}
+#mainBanner h2{
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+	font-family: Cassandra;
+	font-size: 75px;
+	color: white;
+}
+.mobileBook{
+	display: none;
+	cursor: pointer;
+}
+
+/* 태블릿 해상도 대응 */
+@media all and (min-device-width:640px) and (max-width:1024px){
+	html {
+		font-size: 11.5px;
+	}
+	.headerContentsWrapper{
+		height: 75px;
+		opacity: 1;
+	}
+	#headerPopupButton{
+		display: block;
+	}
+	#headerLogoWrapper{
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.headerLogo{
+		display: none;
+	}
+	.hiddenMenu{
+		display: block;
+	}
+	#headerMenuWrapper{
+		position: absolute;
+		top: 77px;
+		left: -180px;
+		width: 180px;
+		height: calc(100vh - 77px);	/* 화면 세로 크기 100% */
+		-webkit-transform: translateY(-37.5px);
+		transform: translateY(-37.5px);
+		background-color: black;
+		-webkit-transition: left 0.5s;
+		transition: left 0.5s;
+	}
+	#headerMenuWrapper ul{
+		position: absolute;
+		width: 90%;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 0;
+	}
+	#headerMenuWrapper li{
+		float: none;
+		text-align: left;
+		border-bottom: 1px solid #FFBF00;
+	}
+	#headerMenuWrapper a, .mobileBook{
+		display: inline-block;
+		padding: 20px 0 20px 10px;
+		width: 100%;
+		height: 100%;
+	}
+	#headerMenuWrapper .menuLast{
+		border-bottom: 0;
+	}
+	.headerTextWrapper{
+		position: absolute;
+    top: 0;
+		left: 50%;
+		width: 298px;
+		height: 75px;
+    transform: translate(-50%, -37.5px);
+	}
+	#headerTextImg {
+		top: 50%;
+		left: 0%;
+		width: 56px;
+		height: 56px;
+		transform: translate(0, -50%);
+	}
+	#headerText {
+		top: 47px;
+		left: 48px;
+		width: 250px;
+		font-size: 30px;
+		transform: translate(0, -50%);
+	}
+	.resizeHeader{
+		top: 0;
+	}
+	.hiddenText{
+		opacity: 1;
+	}
+	#mainBanner{
+		top: 77px;
+		height: 150px;
+		overflow: hidden;
+		padding-top: 0%;
+	}
+	#mainBannerImg{
+    max-width: 100%;
+	}
+	#mainBannerText{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+	}
+	#mainBannerText h1{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+    font-size: 50px;
+  }
+	#mainBannerText p{
+		display: none;
+	}
+}
+
+/* 모바일 해상도 대응 */
+@media all and (max-device-width:639px) {
+	html{
+		font-size: 26.25px;
+	}
+	#headerPopupButton{
+		width: 148px;
+		height: 150px;
+	}
+	.headerContentsWrapper{
+		height: 150px;
+		opacity: 1;
+	}
+	#headerPopupButton{
+		display: block;
+	}
+	#headerLogoWrapper{
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.headerLogo{
+		display: none;
+	}
+	.hiddenMenu{
+		display: block;
+	}
+	#headerMenuWrapper{
+		position: absolute;
+		top: 152px;
+		left: -390px;
+		width: 390px;
+		height: calc(100vh - 152px);	/* 화면 세로 크기 100% */
+		-webkit-transform: translateY(-75px);
+		transform: translateY(-75px);
+		background-color: black;
+		-webkit-transition: left 0.5s;
+		transition: left 0.5s;
+	}
+	#headerMenuWrapper ul{
+		position: absolute;
+		width: 90%;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 0;
+	}
+	#headerMenuWrapper li{
+		float: none;
+		text-align: left;
+		border-bottom: 1px solid #FFBF00;
+		font-size: 2.4rem;
+	}
+	#headerMenuWrapper a, .mobileBook{
+		display: inline-block;
+		padding: 40px 0 40px 20px;
+		width: 100%;
+		height: 100%;
+	}
+	#headerMenuWrapper .menuLast{
+		border-bottom: 0;
+	}
+	.headerTextWrapper{
+		position: absolute;
+    top: 0;
+		left: 50%;
+		width: 590px;
+		height: 150px;
+    transform: translate(-50%, -75px);
+	}
+	#headerTextImg {
+		top: 50%;
+		left: 0%;
+		width: 122px;
+		height: 122px;
+		transform: translate(0, -50%);
+	}
+	#headerText {
+		top: 95px;
+		left: 100px;
+		width: 470px;
+		font-size: 60px;
+		transform: translate(0, -50%);
+	}
+	.resizeHeader{
+		top: 0;
+	}
+	.hiddenText{
+		opacity: 1;
+	}
+	#mainBanner{
+		top: 152px;
+		height: 200px;
+		overflow: hidden;
+		padding-top: 0%;
+	}
+	#mainBannerImg{
+    max-width: 100%;
+	}
+	#mainBannerText{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+	}
+	#mainBannerText h1{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+    font-size: 75px;
+  }
+	#mainBannerText p{
+		display: none;
+	}
+}

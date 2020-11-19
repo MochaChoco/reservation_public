@@ -1,0 +1,543 @@
+@charset "UTF-8";
+
+/* 일반 데스크탑 해상도 대응 */
+main, section {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 1024px;
+	margin-bottom: 75px;
+}
+#newsWrapper{
+	display: inline-block;
+	width: 100%;
+}
+#newsLeft, .newsRight{
+	display: inline-block;
+	float: left;
+}
+#newsLeft{
+	position: relative;
+	width: 720px;
+	margin-right: 25px;
+}
+#newsPopUpButton{
+	display: none;
+	cursor: pointer;
+	position: fixed;
+	top: 50%;
+	right: 0%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-filter: opacity(0.85);
+	filter: opacity(0.85);
+	-webkit-transition : -webkit-filter 1s;
+	-webkit-transition : filter 1s;
+	transition: filter 1s;
+	background-image: url('/Images/newsPopupButton.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	z-index: 3;
+}
+.menuCloseDiv{
+	display: none;
+	position: fixed;
+	top: 77px;
+	left: 0;
+	width: 100vw;
+	height: calc(100vh - 77px);
+	z-index: 1;
+}
+.newsRight{
+	position: absolute;
+	top: 50px;
+	width: 260px;
+	-webkit-transition: right 0.5s;
+	transition: right 0.5s;
+}
+.newsRight::after{
+	clear: both;
+}
+.newsPostDate{
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	width: 85px;
+	height: 105px;
+	left: 3%;
+	transform: translateY(-30%);
+	background-color: #FFBF00;
+	color: white;
+	-webkit-transition: filter 1s;
+	transition: filter 1s;
+	z-index: 1;
+}
+.newsPostDate:hover{
+	-webkit-filter: opacity(0.5);
+	filter: opacity(0.5);
+}
+.newsPostDate h1, .newsPostDate p{
+	position: absolute;
+	width: 100%;
+	top: 30%;
+	transform: translateY(-50%);
+	font-size: 4.5rem;
+}
+.newsPostDate p{
+	top: 70%;
+	font-size: 1.4rem;
+}
+.newsImage{
+	height: 450px;
+	overflow: hidden;
+}
+.newsImage img{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-transition: transform 1s;
+	transition: transform 1s;
+}
+.newsImage img:hover{
+	transform: scale(1.05);
+}
+#newsContent{
+	min-height: 425px;
+	text-align: left;
+	background-color: rgb(244, 245, 250);
+	padding: 25px;
+	margin-bottom: 80px;
+}
+#newsTitle{
+	font-family: CENTURY, serif;
+	font-style: italic;
+	font-size: 3.0rem;
+	margin-bottom: 15px;
+}
+.newsCategory{
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 35px;
+	background: #FFBF00;
+	font-size: 1rem;
+	margin-bottom: 15px;
+}
+.wide{
+	width: 140px;
+}
+.newsCategory a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+.newsCategory p{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 1.6rem;
+}
+#newsDescription{
+	font-size: 1.6rem;
+}
+#recentWrapper, #categoryWrapper, #searchWrapper{
+	position: relative;
+	top: 0px;
+	-webkit-transition: height 1s;
+	transition: height 1s;
+	overflow: hidden;
+}
+.newsRight h1{
+	cursor: pointer;
+	background: white;
+	text-decoration: none;
+	position: relative;
+	font-size: 2.8em;
+	font-family: CENTURY, serif;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #FFBF00;
+	text-align: left;
+	color: black;
+	overflow: hidden;
+	z-index: 2;
+}
+#recentListWrapper, #categoryListWrapper, #searchListWrapper {
+	position: relative;
+	top: -460px;
+	width: 100%;
+	-webkit-transition: top 1s;
+	transition: top 1s;
+	z-index: 1;
+}
+.recentList{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 80px;
+	margin-bottom: 15px;
+	color: black;
+	text-decoration: none;
+	-webkit-transition: background-color 0.6s;
+	transition: background-color 0.6s;
+}
+.recentList:hover{
+	background-color: #F7D358;
+}
+.recentList img{
+	float: left;
+	height: 65px;
+	width: 65px;
+	padding: 7.5px 5px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.sendData{
+	float: left;
+	width: 150px;
+	padding: 10px 0 0 5px;
+	font-size: 1.6rem;
+	text-align: left;
+}
+.date{
+	padding: 0 0 0 5px;
+	font-size: 1.4rem;
+	color: #FF8000;
+}
+.selected{
+	color: white;
+	background-color: #424242;
+	border-radius: 5px;
+}
+.tagSelected{
+	background-color: rgb(244, 245, 250);
+	border-radius: 5px;
+}
+
+#categoryListWrapper{
+	top: -160.8px;
+}
+#categoryListWrapper li{
+	text-align: left;
+	margin-bottom: 12px;
+}
+#categoryListWrapper a{
+	width: 100%;
+	display: inline-block;
+}
+#categoryListWrapper p::before{
+	display: inline-block;
+	transform : translateY(-15%);
+	content: "\25A0";		/* css unicode */
+	font-size: 1rem;
+	margin-right: 1rem;
+}
+#categoryListWrapper p{
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+#categoryListWrapper p:hover{
+	color: #FFBF00;
+}
+.categoryList{
+	text-align: left;
+	text-decoration: none;
+}
+.categoryList p{
+	color: black;
+	font-size: 1.8rem;
+	padding-left: 5px;
+}
+#searchListWrapper{
+	top: -190.8px;
+}
+#searchList{
+	position: relative;
+	height: 30px;
+}
+#searchText{
+	float: left;
+	width: 190px;
+	height: 20px;
+	margin: 0 8px 0 15px;
+	border: 1px solid #A4A4A4;
+	font-size: 1.6rem;
+	box-shadow: 1.25px 1.25px #A4A4A4;
+}
+#searchButton{
+	cursor: pointer;
+	float: left;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-image: url("/Images/searchButton.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#searchButton::after{
+	clear: both;
+}
+#warningNoSearch img{
+	width: auto;
+	height: 350px;
+	margin-bottom: 30px;
+}
+#warningNoSearch h1{
+	font-size: 2.2rem;
+	font-family: CENTURY, serif;
+	margin-bottom: 25px;
+}
+#warningNoSearch a{
+	display: inline-block;
+	width: 90px;
+	height: 45px;
+	background-color: #FFBF00;
+	text-decoration: none;
+	color: black;
+	border-radius: 3px;
+}
+#warningNoSearch p{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+.newsPageList{
+	width: 100%;
+	height: 50px;
+	margin: 50px 0;
+}
+.PageListBottom{
+	margin-bottom: 0;
+}
+.newsPageList a, .newsPageList p{
+	font-family: playball;
+	font-size: 3.0rem;
+	text-decoration: none;
+	padding: 0 20px;
+	margin: 0 5px;
+}
+.newsPageList a{
+	color: #424242;
+}
+.newsPageList a:hover{
+	color: white;
+	background-color: #FFBF00;
+	border-radius: 5px;
+}
+.newsPageList p{
+	display: inline-block;
+}
+.fix{
+	position: fixed;
+/*	width: 260px;	*/
+}
+#buttonFold{
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 255px;
+	width: 45px;
+	height: 45px;
+	background-image: url('/Images/iconFold.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.moving{
+	width: 260px;
+	top: 0;
+	-webkit-transition: top 1s;
+	transition: top 1s;
+}
+
+/* 지금 안씀. transform 속성은 왜인지 css로는 못붙이더라. javascript로 해결
+.animated{
+	-webkit-transition: transform 5s ease-out;
+	-moz-transition: transform 5s ease-out;
+	-o-transition: transform 5s ease-out;
+	transition: transform 5s ease-out;
+}
+*/
+
+/* 태블릿 해상도 대응 */
+@media all and (min-device-width:640px) and (max-width:1024px){
+	main, section{
+		width: 90.1250vw;
+	}
+	#newsLeft{
+		width: 100%;
+	}
+	#newsPopUpButton{
+		display: block;
+		width: 32.5px;
+		height: 75px;
+	}
+	.newsImage{
+		height: 52.3438vw;
+	}
+	.newsRight{
+		position: fixed;
+		top: 77px;
+		right: -285px;
+		width: 265px;
+		height: calc(100vh - 77px);
+		background-color: white;
+		padding: 10px;
+		z-index: 2;
+	}
+	.moving{
+		position: relative;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+	.newsPostDate{
+		width: 100px;
+		height: 115px;
+	}
+	.newsPostDate h1{
+    top: 35%;
+	}
+	.newsPostDate p{
+		top: 70%;
+	}
+	#newsContent{
+		padding: 5.1028vw;
+	}
+	#recentListWrapper, #categoryListWrapper, #searchListWrapper {
+		top: 0;
+	}
+	.newsCategory{
+		padding: 1px;
+		width : 120px;
+		height: 40px;
+	}
+	.wide{
+		width: 150px;
+	}
+	.recentList{
+		width: 100%;
+		height: 95px;
+	}
+	.recentList img{
+		height: 80px;
+		width: 80px;
+	}
+}
+
+/* 모바일 해상도 대응 */
+@media all and (max-device-width:639px) {
+	main, section{
+		width: 90.1250vw;
+	}
+	#newsLeft{
+		width: 100%;
+	}
+	#newsPopUpButton{
+		display: block;
+		width: 75px;
+		height: 150px;
+	}
+	.newsImage{
+		height: 52.3438vw;
+	}
+	.newsRight{
+		position: fixed;
+		top: 152px;
+		right: -640px;
+		width: 530px;
+		height: calc(100vh - 152px);
+		background-color: white;
+		padding: 20px;
+		z-index: 2;
+	}
+	.newsRight h1{
+		margin-bottom: 25px;
+	}
+	.moving{
+		position: relative;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+		width: 525px;
+	}
+	.newsPostDate{
+		width: 180px;
+    height: 220px;
+	}
+	.newsPostDate h1{
+    top: 40%;
+	}
+	.newsPostDate p{
+		top: 75%;
+	}
+	#newsContent{
+		padding: 5.1028vw;
+		margin-bottom: 150px;
+	}
+	#newsTitle{
+		margin-bottom: 35px;
+	}
+	#recentListWrapper, #categoryListWrapper, #searchListWrapper {
+		top: 0;
+	}
+	.newsCategory{
+		width : 200px;
+		height: 75px;
+		margin-bottom: 35px;
+	}
+	.wide{
+		width: 375px;
+	}
+	.recentList {
+		overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+	}
+	.recentList img {
+    height: 150px;
+    width: 150px;
+    padding: 15px 10px;
+	}
+	.sendData {
+    width: calc(100% - 175px);
+    padding: 10px 0 0 5px;
+  }
+	#categoryListWrapper li {
+    margin-bottom: 24px;
+	}
+	#searchList{
+    height: auto;
+    overflow: hidden;
+	}
+	#searchText{
+		width: calc(100% - 80px);
+		height: 55px;
+		margin: 0 8px 0 0;
+	}
+	#searchButton{
+    width: 60px;
+    height: 60px;
+		margin-left: 10px;
+	}
+	#warningNoSearch img{
+		height: 650px;
+		margin-bottom: 60px;
+	}
+	#warningNoSearch h1{
+		margin-bottom: 95px;
+	}
+	#warningNoSearch a{
+		width: 220px;
+		height: 90px;
+		border-radius: 5px;
+		margin-bottom: 50px;
+	}
+}

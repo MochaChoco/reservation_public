@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>order</title>
+  <!-- <link rel="shortcut icon" href="#"> -->
+  <link rel="stylesheet" href="/css/header.css" type="text/css">
+  <link rel="stylesheet" href="/css/nav.css" type="text/css">
+  <link rel="stylesheet" href="/css/order.css" type="text/css">
+  <link rel="stylesheet" href="/css/footer.css" type="text/css">
+  <script src="/Js/include.js" type="text/javascript"></script>
+</head>
+<body>
+  <header w3-include-html="/html/header.html"></header>
+  <nav w3-include-html="/html/nav.html"></nav>
+  <main id="orderBox">
+    <section id="orderlistForm">
+      <h1 id="orderListTitle">Order List</h1>
+      <div id="orderListWrapper">
+        <div id="ceil"><p>Order No. <%=orderList[0]['reservationNo']%></p></div>
+        <div id="contents">
+          <div id="inform">
+            <p>Name : <%=orderList[0]['name']%></p>
+            <p>Phone Number : <%=orderList[0]['phoneNum']%></p>
+            <p>Card Number : <%=orderList[0]['cardNum']%></p>
+            <p>Check In : <%=orderList[0]['date_format(checkIn, \'%Y-%m-%d %T\')']%></p>
+            <p>Check Out : <%=orderList[0]['date_format(checkOut, \'%Y-%m-%d %T\')']%></p>
+            <p>Reservation Time : <%=orderList[0]['date_format(reservationTime, \'%Y-%m-%d %T\')']%></p>
+          </div>
+          <div class="priceInfo">
+            <p class="roomsName priceInfoMenu">room type</p><p class="roomsPrice priceInfoMenu">price</p><p class="roomsPeriod priceInfoMenu">period</p><p class="roomsResult priceInfoMenu">result</p></br>
+          <% for(var i = 0 ; i < orderList.length ; i++){%>
+              <p class="roomsName"></p><p class="roomsPrice"></p><p class="roomsPeriod"></p><p class="roomsResult"></p></br>
+          <%}%>
+          </div>
+          <div id="allResult">
+            <p id="allResultPrice"></p>
+          </div>
+        </div>
+        <a id="homeButton" href="/main"><p>Home</p></a>
+      </div>
+    </section>
+  </main>
+  <footer w3-include-html="/html/footer.html"></footer>
+  <script src="/Js/header.js" type="text/javascript"></script>
+  <script src="/Js/nav.js" type="text/javascript"></script>
+  <script src="/Js/order.js" type="text/javascript"></script>
+  <script>
+  /* 서버측에서 db에서 쿼리로 받은 값들을 클라이언트 사이드로 전달해줌. */
+    var arr = new Array();
+
+    <%for(i in orderList) {%>
+        var map = new Map([
+          ['roomType', ''],
+          ['price', 0]
+        ]);
+
+        map.set('roomType', '<%= orderList[i]['roomType']%>');
+        map.set('price', <%= orderList[i]['price']%>);
+        arr.push(map);
+    <%}%>
+
+    var checkIn = `<%=orderList[0]['date_format(checkIn, \'%Y-%m-%d %T\')']%>`;
+    var checkOut = `<%=orderList[0]['date_format(checkOut, \'%Y-%m-%d %T\')']%>`;
+    checkIn = new Date(checkIn.split(" ")[0]);
+    checkOut = new Date(checkOut.split(" ")[0]);
+
+    sendBookData(arr, Math.abs(checkIn - checkOut) / (24 * 60 * 60 * 1000));
+  </script>
+</body>
+</html>

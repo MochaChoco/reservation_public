@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>terms</title>
+    <style>
+      html{
+        font-size: 10px;
+      }
+      body{
+        margin: 0 0 0 10px;
+      }
+      h1{
+        margin-top: 0px;
+        font-size: 3.2rem;
+      }
+      h2{
+        font-size: 2.4rem;
+      }
+      p{
+        font-size: 1.6rem;
+      }
+      li {
+        margin-left: 15px;
+        font-size: 1.6rem;
+      }
+      .indent{
+        margin-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Terms of service</h1>
+    <p>Terms of service (also known as terms of use and terms and conditions,
+       commonly abbreviated as TOS or ToS, ToU or T&C) are the legal agreements
+       between a service provider and a person who wants to use that service. The
+       person must agree to abide by the terms of service in order to use the
+       offered service. Terms of service can also be merely a disclaimer, especially
+       regarding the use of websites.</p>
+
+    <h2>Usage</h2>
+    <p>he Terms of Service Agreement is mainly used for legal purposes by companies
+       which provide software or services, such as web browsers, e-commerce, web search
+       engines, social media, and transport services.
+
+       A legitimate terms-of-service agreement is legally binding and may be subject
+       to change. Companies can enforce the terms by refusing service. Customers can
+       enforce by filing a lawsuit or arbitration case if they can show they were actually
+       harmed by a breach of the terms. There is a heightened risk of data going astray
+       during corporate changes, including mergers, divestitures, buyouts, downsizing, etc.,
+       when data can be transferred improperly.</p>
+
+    <h2>Contents</h2>
+    <ul>
+      <p>A terms of service agreement typically contains sections pertaining to one or more of the following topics:</p>
+
+      <li>Disambiguation/definition of key words and phrases</li>
+      <li>User rights and responsibilities</li>
+      <li class="indent">Proper or expected usage; definition of misuse</li>
+      <li class="indent">Accountability for online actions, behavior, and conduct</li>
+      <li class="indent">Privacy policy outlining the use of personal data</li>
+      <li class="indent">Payment details such as membership or subscription fees, etc.</li>
+      <li class="indent">Opt-out policy describing procedure for account termination, if available</li>
+      <li class="indent">Arbitration detailing the dispute resolution process and limited rights to take a claim to court</li>
+      <li>Disclaimer/Limitation of Liability clarifying the site's legal liability for damages incurred by users</li>
+      <li>User notification upon modification of terms, if offered</li>
+
+      <p>Among 102 companies marketing genetic testing to consumers in 2014 for health purposes, 71 had publicly available terms and conditions:</p>
+      <li>57 of the 71 had disclaimer clauses (including 10 disclaiming liability for injury caused by their own negligence),</li>
+      <li>51 let the company change terms (including 17 without notice),</li>
+      <li>34 allow data disclosure in certain circumstances,</li>
+      <li>31 require consumers to indemnify the company,</li>
+      <li>20 promise not to sell data.</li>
+
+      <p>Among 260 mass market consumer software license agreements in 2010,</p>
+      <li>91% disclaimed warranties of merchantability or fitness for purpose or said it was "As is"</li>
+      <li>92% disclaimed consequential, incidental, special or foreseeable damages</li>
+      <li>69% did not warrant the software was free of defects or would work as described in the manual</li>
+      <li>55% capped damages at the purchase price or less</li>
+      <li>36% said they were not warranting whether it infringed others' intellectual property rights</li>
+      <li>32% required arbitration or a specific court</li>
+      <li>17% required the customer to pay legal bills of the maker (indemnify), but not vice versa</li>
+
+      <p>Among the terms and conditions of 31 cloud-computing services in January-July 2010, operating in England,</p>
+      <li>27 specified the law to be used (a US state or other country),</li>
+      <li>most specify that consumers can claim against the company only in a particular city in that jurisdiction, though often the company can claim against the consumer anywhere,</li>
+      <li>some require claims to be brought within half a year to 2 years,</li>
+      <li>7 impose arbitration, all forbid illegal and objectionable conduct by the consumer,</li>
+      <li>13 can amend terms just by posting changes on their own website,</li>
+      <li>a majority disclaim responsibility for confidentiality or backups,</li>
+      <li>most promise to preserve data only briefly after terminating service,</li>
+      <li>few promise to delete data thoroughly when the customer leaves,</li>
+      <li>some monitor the customers' data to enforce their policies on use,</li>
+      <li>all disclaim warranties and almost all disclaim liability,</li>
+      <li>24 require the customer to indemnify them, a few indemnify the customer,</li>
+      <li>a few give credits for poor service, 15 promise "best efforts" and can suspend or stop any time.</li>
+
+      <p>The researchers note that rules on location and time limits may be unenforceable for consumers in many jurisdictions with consumer protections, that acceptable use policies are rarely enforced, that quick deletion is dangerous if a court later rules the termination wrongful, that local laws often require warranties (and UK forced Apple to say so).</p>
+    </ul>
+  </body>
+  <script>
+    var body = document.getElementsByTagName("body")[0].clientHeight;
+    function checkPageScroll(){   // 페이지 끝까지 내렸는지 체크하는 함수
+      if(window.ScrollY || document.documentElement.scrollTop >= document.body.clientHeight - window.innerHeight)
+          window.parent.allRead();
+    }
+    function setFontSize(fontSize){   // 부모가 가진 html태그의 현재 font-size에 맞춰 term.html의 font-size도 수정해주는 함수
+      document.getElementsByTagName("html")[0].style.fontSize = fontSize;
+    }
+    window.onscroll = function() {
+      checkPageScroll();
+    }
+  </script>
+</html>

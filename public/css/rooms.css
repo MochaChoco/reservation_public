@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/* 일반 데스크탑 해상도 대응 */
+main {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 1024px;
+	}
+section {
+	height: 2300px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+.roomInfoWrapper {
+	width: 482px;
+	background-color:rgb(244, 245, 250);
+	margin: 15px;
+}
+.blue {
+	background-color:rgb(29, 21, 47);
+	color: white;
+}
+.hidden{
+	display:none;
+}
+.roomImage{
+	width: 100%;
+	height: 350px;
+	background-size: cover;
+}
+.roomInfoText {
+	text-align: left;
+	padding: 65px 40px;
+}
+.roomInfoText h1{
+	font-size: 3.5rem;
+	margin-bottom: 35px;
+}
+.roomInfoText p{
+	font-size: 1.6rem;
+	margin-bottom: 40px;
+}
+.roomInfoText ul{
+	font-size: 1.6rem;
+	margin-bottom: 40px;
+}
+.roomInfoText li{
+	position: relative;
+	margin-bottom: 25px;
+}
+.liImage{
+	display: inline-block;
+	position: relative;
+	top: 0;
+	height: 2.0rem;
+	margin-right: 15px;
+}
+.liText{
+	display: inline;
+	position: relative;
+	top: -4px;
+}
+.roomInfoText h2{
+	display: inline-block;
+	font-size: 3.8rem;
+	color: orange;
+}
+.day{
+	font-size: 2.0rem;
+	font-weight: bold;
+}
+#showButton{
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	width: 120px;
+	background-color: #FFBF00;
+	margin-bottom: 90px;
+}
+#showButton p{
+	position: relative;
+	top:50%;
+	color: black;
+	font-size: 1.6rem;
+	font-weight: bold;
+	transform: translateY(-50%);
+}
+
+/* 태블릿 해상도 대응 */
+@media all and (min-device-width:640px) and (max-width:1024px){
+	main{
+		width: 70.3125vw;
+	}
+	.roomInfoWrapper {
+		position: relative;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 1.4648vw;
+	}
+	.hidden{
+		display: block;			/* display: hidden으로 바꾸면 글자 크기가 달라짐 */
+	}
+	.roomImage{
+		height: 47.8516vw;
+	}
+	.liText {
+		top: -6px;
+	}
+}
+
+/* 모바일 해상도 대응 */
+@media all and (max-device-width:639px) {
+	main{
+		width: 90.3125vw;
+	}
+	.roomInfoWrapper {
+		position: relative;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 1.4648vw;
+	}
+	.hidden{
+		display: block;			/* display: hidden으로 바꾸면 글자 크기가 달라짐 */
+	}
+	.roomImage{
+		height: 47.8516vw;
+	}
+	.roomInfoText{
+		padding: 65px 50px;
+	}
+	.roomInfoText p{
+		display: none;
+	}
+	.roomInfoText li{
+		height: auto;
+		margin-bottom: 45px;
+	}
+	.liImage{
+		height: 1.8rem;
+	}
+	.liText{
+		top: -8px;
+	}
+	.roomInfoText h2{
+		display: inline-block;
+		color: orange;
+	}
+	.day{
+		font-weight: bold;
+	}
+	#showButton{
+		height: 140px;
+		width: 280px;
+		margin-bottom: 150px;
+	}
+}

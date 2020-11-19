@@ -1,0 +1,452 @@
+@charset "UTF-8";
+
+/* 일반 데스크탑 해상도 대응 */
+main {
+	position: relative;
+	left:50%;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 1024px;
+	height: 2200px;
+}
+section {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 200px;
+}
+.hiddenRooms{
+	display: none;
+}
+#introduceTitle {
+	position: relative;
+  width: 100%;
+  height: 230px;
+  margin-bottom: 30px;
+}
+#introduceTitle div{
+	line-height: 1.6;
+	position: relative;
+	font-family: Playball, cursive;
+	font-style: italic;
+	font-size: 18.5rem;
+	color: #F2F2F2;
+}
+#introduceTitle h1{
+	position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  font-size: 3.0rem;
+  font-weight: 400;
+}
+section p{
+  -ms-word-break: break-all;
+  word-break: break-all;
+	word-break: break-all;
+	font-size: 1.6rem;
+	margin-bottom: 60px;
+}
+#introduceSlideWrapper {
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+}
+#introduceSlideGroup {
+	position: relative;
+	left: -50%;
+	height: 100%;
+	transform: translateX(-50%);
+}
+#introduceSlide{
+	position: relative;
+	height: 100%;
+	width: 200%;
+	left: 0;
+	transition: left 2s;
+}
+.introducePicture{
+	float: left;
+	position: relative;
+	width: 236px;
+	height: 100%;
+	margin: 0 10px;
+	background-size:cover;
+}
+#discoverContents{
+	text-align: left;
+	width: 100%;
+	height: 400px;
+	margin-bottom: 30px;
+}
+.col_1{
+	float: left;
+	width: 450px;
+	height: 100%;
+}
+.col_2{
+	float: left;
+	width: 570px;
+	height: 100%;
+}
+.col_2 p{
+	position: relative;
+	top: 50%;
+	font-size: 1.6rem;
+	margin-left: 30px;
+}
+.row_1{
+	position: relative;
+	width: 100%;
+	height: 50%;
+}
+.row_1 h1 {
+	line-height: 1.6;
+  display: inline-block;
+  position: absolute;
+  bottom: 25px;
+  font-family: Cassandra;
+  font-size: 86px;
+  color: #F2F2F2;
+}
+.row_1 p{
+	position: relative;
+  top: 75%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  font-weight: 400;
+}
+.row_2{
+	width: 100%;
+	height: 50%;
+}
+.row_2_contentText{
+	font-size: 1.9rem;
+	font-weight: 400;
+	font-style: italic;
+}
+.row_2 div{
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	height: 50px;
+	width: 130px;
+	background-color: #FFBF00;
+	transition: color 0.25s;
+}
+.row_2 div:hover{
+	color: white;
+}
+.row_2_buttonText{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.7rem;
+}
+#discoverSlideWrapper{
+	position: relative;
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+}
+#discoverSlide{
+	position: relative;
+	width: 500%;
+	height: 100%;
+	left: -1024px;
+	transition: left 1s;
+}
+.discoverPicture{
+	float: left;
+	width: 1024px;
+	height: 100%;
+	background-size: cover;
+}
+.slideButton{
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	top: 48%;
+	transform: translateY(-50%);
+	font-size: 3.0rem;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 3px;
+	color: white;
+	transition: 0.5s ease;
+}
+.slideButton:hover{
+	color: black;
+	background-color: white;
+}
+.prevSlideButton{
+	left: 0%;
+}
+.nextSlideButton{
+	right: 0%;
+}
+#dotWrapper{
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	height: 10%;
+	transform: translate(-50%, -10%);
+	text-align: center;
+}
+.dot{
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: white;
+	border-radius: 50%;
+	display: inline-block;
+	transition: 0.6s ease;
+}
+.dot:hover, .active{
+	background-color: #FFBF00;
+}
+
+/* 태블릿 해상도 대응 */
+@media all and (min-device-width:640px) and (max-width:1024px){
+	main{
+		width: 90vw;
+		height: auto;
+		overflow: hidden;
+	}
+	section{
+		margin-bottom: 150px;
+	}
+	#introduceTitle {
+    height: 195px;
+    margin-bottom: 70px;
+	}
+	#introduceTitle div {
+    font-size: 17rem;
+  }
+	#introduceTitle h1{
+		top: 100%;
+		bottom: auto;
+	}
+	.introducePicture{
+		float: left;
+		position: relative;
+		width: 20.7422vw;
+		height: 100%;
+		margin: 0 0.8789vw;
+		background-size:cover;
+	}
+	#discoverContents {
+		position: relative;
+    height: auto;
+		overflow: hidden;
+    margin-bottom: 50px;
+	}
+	.col_1 {
+		position: relative;
+		float: left;
+    width: 100%;
+		height: auto;
+		margin-top: 70px;
+		margin-bottom: 50px;
+	}
+	.row_1 {
+		position: relative;
+		float: left;
+		height: auto;
+	}
+	.row_1 h1 {
+		display: inline-block;
+    position: relative;
+		top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+		text-align: center;
+    font-size: 9.0rem;
+	}
+	.row_1 p {
+    position: absolute;
+    top: auto;
+		bottom: 0;
+		width: 100%;
+    left: 50%;
+		text-align: center;
+		font-size: 3.0rem;
+    transform: translateX(-50%);
+	}
+	.row_2 {
+		position: relative;
+		float: left;
+		height: auto;
+		margin-top: -60px;
+	}
+	.row_2_contentText {
+    position: relative;
+    top: 0;
+    margin: 0 1.3021vw;
+	}
+	.row_2 div {
+		position: relative;
+    top: auto;
+    bottom: 0;
+    left: 100%;
+    transform: translateX(-100%);
+	}
+	.col_2 {
+		position: relative;
+		float: left;
+    width: 100%;
+		height: auto;
+	}
+	.col_2 p {
+    top: 0;
+    margin: 0 1.3021vw;
+	}
+	#discoverSlideWrapper{
+		height: 48.8281vw;
+	}
+	#discoverSlide{
+		position: relative;
+		width: 500%;
+		height: 100%;
+		left: -90vw;
+		transition: left 1s;
+	}
+	.discoverPicture{
+		float: left;
+		width: 90vw;
+		height: 100%;
+		background-size: cover;
+	}
+}
+
+@media all and (max-width:810px) {		/* 브라우저 크기에 따른 welcome 로고 크기 변경 */
+	#introduceTitle{
+		height: 24.0741vw;
+		margin-bottom: 120px;
+	}
+	#introduceTitle div{
+		font-size: 24.1vw;
+	}
+}
+
+/* 모바일 해상도 대응 */
+@media all and (max-device-width:639px){
+	main{
+		width: 90vw;
+		height: auto;
+		overflow: hidden;
+	}
+	section{
+		margin-bottom: 150px;
+	}
+	#introduceTitle{
+		height: 24.0741vw;
+		margin-bottom: 250px;
+	}
+	#introduceTitle div {
+		font-size: 24.1vw;
+  }
+	#introduceTitle h1{
+		top: 100%;
+		bottom: auto;
+	}
+	.introducePicture{
+		float: left;
+		position: relative;
+		width: 20.7422vw;
+		height: 100%;
+		margin: 0 0.8789vw;
+		background-size:cover;
+	}
+	#discoverContents {
+		position: relative;
+    height: auto;
+		overflow: hidden;
+    margin-bottom: 50px;
+	}
+	.col_1 {
+		position: relative;
+		float: left;
+    width: 100%;
+		height: auto;
+		margin-top: 150px;
+		margin-bottom: 120px;
+	}
+	.row_1 {
+		position: relative;
+		float: left;
+		height: auto;
+	}
+	.row_1 h1 {
+		display: inline-block;
+    position: relative;
+		top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+		text-align: center;
+    font-size: 19vw;
+	}
+	.row_1 p {
+    position: absolute;
+    top: auto;
+		bottom: 0;
+		width: 100%;
+    left: 50%;
+		text-align: center;
+		font-size: 3.0rem;
+    transform: translateX(-50%);
+	}
+	.row_2 {
+		position: relative;
+		float: left;
+		height: auto;
+		margin-top: -30px;
+	}
+	.row_2_contentText {
+    position: relative;
+    top: 0;
+    margin: 0 1.3021vw;
+	}
+	.row_2 div {
+		cursor: pointer;
+    position: relative;
+    display: inline-block;
+    height: 100px;
+    width: 260px;
+    left: 100%;
+    transform: translateX(-100%);
+    background-color: #FFBF00;
+    transition: color 0.25s;
+    border-radius: 10px;
+	}
+	.col_2 {
+		position: relative;
+		float: left;
+    width: 100%;
+		height: auto;
+	}
+	.col_2 p {
+    top: 0;
+    margin: 0 1.3021vw;
+	}
+	#discoverSlideWrapper{
+		height: 48.8281vw;
+	}
+	#discoverSlide{
+		position: relative;
+		width: 500%;
+		height: 100%;
+		left: -90vw;
+		transition: left 1s;
+	}
+	.discoverPicture{
+		float: left;
+		width: 90vw;
+		height: 100%;
+		background-size: cover;
+	}
+}

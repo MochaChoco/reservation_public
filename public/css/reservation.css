@@ -1,0 +1,687 @@
+@charset "UTF-8";
+
+/* 일반 데스크탑 해상도 대응 */
+body{
+	min-width: 1024px;
+}
+main {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		width: 1024px;
+}
+section {
+	height: auto;
+}
+section h1{
+	text-align: left;
+	font-family: CENTURY, serif;
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+.middleForm{
+	position: absolute;
+	top: 50%;
+}
+.listWrapper{
+	position: relative;
+	overflow: hidden;
+}
+.ceil{
+	position: relative;
+	height: 40px;
+	background-color: #0A0A2A;
+	border-top: 2px solid #FFBF00;
+	border-bottom: 2px solid #FFBF00;
+}
+.ceil div{
+	font-size: 1.8rem;
+	color:white;
+}
+.menuNameWrapper{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1024px;
+	height: 24px;
+	transform: translate(-50%, -50%);
+}
+.contents{
+	height: 50px;
+	position: relative;
+	padding-top: 10px;
+	border-bottom: 2px solid black;
+	margin-bottom: 75px;
+	background-color: rgb(244, 245, 250);
+}
+.reservationInputDate, .reservationInputText, .reservationInputSelect{
+   top: 50%;
+   left: 50%;
+   width: 90%;
+   height: 80%;
+   transform: translate(-50%, -50%);
+	 border: 1px solid black;
+	 border-radius: 2px;
+}
+.avaliableList{
+	height : auto;
+}
+.hideContents{
+	display: none;
+}
+.fixMenuSize{
+	position: relative;
+	display: inline-block;
+	width: 140px;
+	height: 100%;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+.formSmall{
+	width: 100px;
+}
+.rooms{
+	position: relative;
+	height: 150px;
+	border-bottom: 1px solid #BDBDBD;
+	margin-bottom: 15px;
+}
+.roomsImg{
+	float: left;
+	height: 100%;
+	width: 23%;
+}
+.roomsContentWrapper{
+	float: left;
+	height: 100%;
+	width: 77%;
+}
+.roomsContentWrapper::after{
+	clear: both;
+}
+.roomsName{
+	text-align: left;
+	font-family: CENTURY, serif;
+	font-size: 2.0rem;
+	font-weight: bold;
+	padding : 20px 0 0 20px;
+}
+.roomsDescription{
+	text-align: left;
+	font-size: 1.6rem;
+	padding : 20px 0 0 20px;
+}
+.roomsCount{
+	text-align: left;
+	font-size: 1.6rem;
+	padding : 20px 0 0 20px;
+}
+.roomsPrice{
+	position: absolute;
+	top: 40%;
+	right: 13%;
+	width: 120px;
+	height: 18px;
+	transform: translateY(-50%);
+}
+.roomsPrice p{
+	position: absolute;
+	top: 40%;
+	right: 0%;
+	transform: translateY(-50%);
+	font-size: 1.6rem;
+}
+.selectForm{
+	width: 50px;
+}
+.buttonAdd{
+	position: absolute;
+	top: 70%;
+	right: 2%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	width: 75px;
+	height: 25px;
+	font-size: 1.6rem;
+	background-color: #FFBF00;
+	transition: all 0.15s;
+	border-radius: 1px;
+}
+.buttonAdd p{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.buttonAddAfter{
+	right: 2%;
+}
+.countWrapper{
+	position: absolute;
+	top: 40%;
+	right: 2%;
+	width: 80px;
+	height: 18px;
+	transform: translateY(-50%);
+}
+.countNum{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.6rem;
+}
+.buttonPlus{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 85%;
+	transform: translate(-50%, -50%);
+	width: 18px;
+	height: 18px;
+	background-image: url('/Images/buttonPlus.png');
+	background-size: cover;
+}
+.buttonMinus{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	transform: translate(-50%, -50%);
+	width: 18px;
+	height: 18px;
+	background-image: url('/Images/buttonMinus.png');
+	background-size: cover;
+}
+.buttonRight{
+	display: inline-block;
+	position: absolute;
+	right: 0%;
+}
+.contentsFloor{
+	border-top: 2px solid black;
+}
+.contentMargin{
+	margin-bottom: 175px;
+}
+.selectedContentWrapper{
+	width: 100%;
+}
+.noRoomsSelected{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform : translate(-50%, -50%);
+	font-size: 2.0rem;
+}
+.selectedRooms{
+	position: relative;
+	height: 80px;
+	font-size: 1.6rem;
+	border-bottom: 1px solid #BDBDBD;
+	margin-bottom: 15px;
+}
+.selectedRoomsImg{
+	float: left;
+	height: 100%;
+	width: 12.5%;
+}
+.selectedContent{
+	float: left;
+	height: 100%;
+	width: 87.5%;
+}
+.selectedContentWrapper::after{
+	clear: left;
+}
+.selectedRoomsName{
+	float:left;
+	text-align: left;
+	padding : 25px 0 0 20px;
+}
+.selectedRoomsDescription{
+	float: right;
+	padding : 25px 20px 0 0;
+}
+.resultPrice{
+	display: none;
+	font-size: 1.7rem;
+	font-weight: bold;
+	text-align: right;
+	margin: 0 20px 20px 0;
+}
+.buttonReset{
+	display: none;
+	position: absolute;
+	right: calc(0% + 140px);
+	transform: translateX(-50%);
+}
+.buttonBook{
+	display: none;
+}
+.reservationButton{
+	cursor: pointer;
+	text-align: center;
+	width : 120px;
+	height: 36px;
+	bottom: 10px;
+	transform: translateY(-50%);
+	background-color: #FFBF00;
+	border-radius: 2px;
+}
+
+/* 태블릿 해상도 대응 */
+@media all and (min-device-width:640px) and (max-width:1024px){
+	body{
+		min-width: auto;
+	}
+	main{
+		width: 93.7500vw;
+	}
+	.menuNameWrapper{
+		width: 93.7500vw;
+	}
+	.fixMenuSize{
+		width: 16.5313vw;
+		margin-left: 2.8828vw;
+		margin-right: 2.8828vw;
+	}
+	.formSmall{
+		width: 10.6484vw;
+	}
+	.rooms{
+		overflow: hidden; /*img가 박스 박으로 나가서 크기가 안맞는 문제를 수정해줌*/
+		height: auto;
+		width: 100%;
+	}
+	.roomsImg{
+		float: left;
+		height: 63.8965vw;
+		width: 100%;
+	}
+	.roomsContentWrapper{
+		position: relative;
+		width: 100%;
+	}
+	.roomsContentWrapper::after{
+		clear: both;
+	}
+	.roomsName{
+		text-align: left;
+		font-family: CENTURY, serif;
+		font-weight: bold;
+		padding : 15px 0 0 15px;
+	}
+	.roomsDescription{
+		text-align: left;
+		padding : 15px 0 0 15px;
+	}
+	.roomsCount{
+		text-align: left;
+		padding : 15px 0 15px 15px;
+	}
+	.roomsPrice{
+		top: 24%;
+		right: 3%;
+	}
+	.selectForm{
+		width: 50px;
+	}
+	.buttonAdd{
+		top: 81%;
+		right: 3%;
+	}
+	.buttonAddAfter{
+		right: 3%;
+	}
+	.countWrapper{
+		top: 54.5%;
+		right: 3%;
+	}
+	.countNum{
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.buttonPlus{
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		left: 85%;
+		transform: translate(-50%, -50%);
+		width: 18px;
+		height: 18px;
+		background-image: url('/Images/buttonPlus.png');
+		background-size: cover;
+	}
+	.buttonMinus{
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		left: 15%;
+		transform: translate(-50%, -50%);
+		width: 18px;
+		height: 18px;
+		background-image: url('/Images/buttonMinus.png');
+		background-size: cover;
+	}
+	.contentsFloor{
+		border-top: 2px solid black;
+	}
+	.contentMargin{
+		margin-bottom: 175px;
+	}
+	.selectedContentWrapper{
+		width: 100%;
+	}
+	.noRoomsSelected{
+		position:absolute;
+		top: 50%;
+		left: 50%;
+		transform : translate(-50%, -50%);
+	}
+	.selectedRooms{
+		position: relative;
+		height: 105px;
+		border-bottom: 1px solid #BDBDBD;
+		margin-bottom: 15px;
+	}
+	.selectedRoomsImg{
+		float: left;
+		height: 100%;
+		width: auto;
+	}
+	.selectedContent{
+		float: left;
+		height: 100%;
+		width: calc(100% - 155px);
+		text-align: left;
+	}
+	.selectedContentWrapper::after{
+		clear: both;
+	}
+	.selectedRoomsName{
+		padding: 40px 0 0 10px;
+	}
+	.selectedRoomsDescription{
+		float: right;
+		padding : 40px 10px 0 0;
+	}
+	.resultPrice{
+		display: none;
+		font-weight: bold;
+		text-align: right;
+		margin: 0 20px 20px 0;
+	}
+}
+
+/* 모바일 해상도 대응 */
+@media all and (max-device-width:639px){
+	body{
+		min-width: auto;
+	}
+	main{
+		width: 93.7500vw;
+	}
+	.listWrapper{
+		width: 100%;
+	}
+	.ceil{
+		float: left;
+		width: 280px;
+		height: 460px;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+	}
+	.menuNameWrapper{
+		width: 100%;
+		height: 100%;
+	}
+	.formSmall{
+		width: 10.6484v;
+	}
+	.fixMenuSize{
+		float: left;
+		width: 100%;
+		height: 77.5px;
+		text-align: left;
+		margin: 30px 0 0 20px;
+	}
+	.fixMenuSize p{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.contents{
+		height: 125px;
+		margin-bottom: 150px;
+	}
+	.searchContents{
+		float: left;
+		width: calc(100% - 280px);
+		height: 460px;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+		padding: 0;
+		margin-bottom: 160px;
+	}
+	.avaliableList {
+    height: auto;
+	}
+	.middleForm{
+		top: 0;
+		left: 0;
+		width: 280px;
+		height: 100%;
+		transform: none;
+	}
+	.rooms{
+		overflow: hidden; /*img가 박스 박으로 나가서 크기가 안맞는 문제를 수정해줌*/
+		height: auto;
+		width: 100%;
+	}
+	.roomsImg{
+		float: left;
+		height: 63.8965vw;
+		width: 100%;
+	}
+	.roomsContentWrapper{
+		position: relative;
+		width: 100%;
+		height: 330px;
+	}
+	.roomsContentWrapper::after{
+		clear: both;
+	}
+	.roomsName{
+		text-align: left;
+		font-family: CENTURY, serif;
+		font-weight: bold;
+		padding : 15px 0 0 15px;
+	}
+	.roomsDescription{
+		text-align: left;
+		padding : 15px 0 0 15px;
+	}
+	.roomsCount{
+		text-align: left;
+		padding : 15px 0 15px 15px;
+	}
+	.roomsPrice{
+		top: 49px;
+		right: 3%;
+	}
+	.buttonReset{
+    right: calc(0% + 275px);
+	}
+	.selectForm{
+		width: 50px;
+	}
+	.buttonAdd{
+		position: absolute;
+		top: auto;
+		bottom: 20px;
+		right: 10;
+		width: 180px;
+		height: 80px;
+		transform: none;
+		border-radius: 5px;
+	}
+	.buttonAddAfter{
+		right: 3%;
+	}
+	.countWrapper{
+		position: absolute;
+		top: auto;
+		bottom: 20px;
+		left: auto;
+		right: calc(0% + 260px);
+		height: 80px;
+		width: 180px;
+		transform: none;
+	}
+	.countNum{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.buttonPlus{
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		left: 87.5%;
+		transform: translate(-50%, -50%);
+		width: 48px;
+		height: 48px;
+		background-image: url('/Images/buttonPlus.png');
+		background-size: cover;
+	}
+	.buttonMinus{
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		left: 12.5%;
+		transform: translate(-50%, -50%);
+		width: 48px;
+		height: 48px;
+		background-image: url('/Images/buttonMinus.png');
+		background-size: cover;
+	}
+	.contentsFloor{
+		border-top: 2px solid black;
+	}
+	.contentMargin{
+		margin-bottom: 175px;
+	}
+	.selectedContentWrapper{
+		width: 100%;
+	}
+	.noRoomsSelected{
+		position:absolute;
+		top: 50%;
+		left: 50%;
+		transform : translate(-50%, -50%);
+		width: 100%;
+	}
+	.selectedRooms{
+		position: relative;
+		height: 113px;
+		border-bottom: 1px solid #BDBDBD;
+		margin-bottom: 15px;
+	}
+	.selectedRoomsImg{
+		float: left;
+		height: 100%;
+		width: auto;
+	}
+	.selectedContent{
+		float: left;
+		height: 100%;
+		width: calc(100% - 167px);
+		text-align: left;
+	}
+	.selectedContentWrapper::after{
+		clear: both;
+	}
+	.selectedRoomsName{
+		padding: 5px 0 0 10px;
+	}
+	.selectedRoomsDescription{
+		float: left;
+		padding : 7.5px 0 0 10px;
+	}
+	.resultPrice{
+		display: none;
+		font-weight: bold;
+		text-align: right;
+		margin: 0 20px 20px 0;
+	}
+	.reservationButton{
+			width: 250px;
+			height: 85px;
+			border-radius: 5px;
+	}
+}
+
+/* pc환경에서 창 가로가 800px 이하일때 처리 */
+@media all and (max-width:800px){
+	.selectedContent{
+		width: 310px;
+	}
+	.selectedRoomsName{
+		padding : 20px 0 0 10px;
+	}
+	.selectedRoomsDescription{
+		float: left;
+		padding : 20px 0 0 10px;
+	}
+}
+
+	/* pc환경에서 창 크기 최소로 했을 때 처리 */
+@media all and (max-width:639px){
+	.listWrapper{
+		width: 100%;
+	}
+	.ceil{
+		float: left;
+		width: 130px;
+		height: 340px;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+	}
+	.menuNameWrapper{
+		width: 100%;
+		height: 100%;
+	}
+	.fixMenuSize{
+		float: left;
+		width: 100%;
+		height: 45px;
+		text-align: left;
+		margin: 30px 0 0 10px;
+	}
+	.fixMenuSize p{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.searchContents{
+		float: left;
+		width: calc(100% - 130px);
+		height: 340px;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+		padding: 0;
+		margin-bottom: 75px;
+	}
+	.middleForm{
+		top: 0;
+		left: 0;
+		width: 150px;
+		height: 100%;
+		transform: none;
+	}
+}

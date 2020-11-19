@@ -1,0 +1,406 @@
+@charset "UTF-8";
+
+/* 일반 데스크탑 해상도 대응 */
+body{
+	min-width: 1024px;
+}
+main {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1024px;
+	height: 300px;
+	margin-bottom: 75px;
+}
+section{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 500px;
+}
+#noOrderForm{
+	height: 550px;
+}
+#orderlistForm{
+	width: 800px;
+}
+#orderBox{
+	position: relative;
+	height: auto;
+	margin-bottom: 150px;
+}
+#checkWrapper{
+	height: 250px;
+	border-top: 3px solid #A4A4A4;
+	border-bottom: 3px solid #A4A4A4;
+}
+#top{
+	height: 30px;
+	background-color: #120A2A;
+}
+#bottom{
+	position: relative;
+	height: 220px;
+}
+#notice{
+	position: absolute;
+	top: 15%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	font-family: CENTURY, serif;
+	font-size: 2.0rem;
+}
+.reservationNo{
+	position: absolute;
+	top: 40%;
+	left: 25%;
+	width: 20px;
+	transform: translate(-50%,-50%);
+	font-size: 1.6rem;
+}
+.password{
+	position: absolute;
+	top: 56%;
+	left: 25%;
+	width: 20px;
+	transform: translate(-50%,-50%);
+	font-size: 1.6rem;
+}
+.checkForm{
+	left: 62.5%;
+	width: 150px;
+	height: 24px;
+}
+#buttonWrapper{
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 150px;
+	height: 32.5px;
+}
+#buttonWrapper p{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.6rem;
+}
+#formSubmit, #formCancle{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	width: 70px;
+	height: 32.5px;
+	transform: translate(-50%, -50%);
+	background-color: #424242;
+	color: white;
+	border: 0px;
+	border-radius: 2px;
+}
+#formSubmit:hover, #formCancle:hover{
+	background-color: #FFBF00;
+	color: black;
+}
+#formCancle{
+	left: 75%;
+}
+#warningNoSearch{
+	position: relative;
+	left: 50%;
+	height: 100%;
+	transform: translateX(-50%);
+}
+#warningNoSearch img{
+	position: relative;
+	left: 50%;
+	width: auto;
+	transform: translateX(-50%);
+	height: 350px;
+}
+#warningNoSearch h1{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	font-size: 2.2rem;
+	font-family: CENTURY, serif;
+	margin-bottom: 50px;
+}
+#warningNoSearch a{
+	position: relative;
+	left: 50%;
+	width: 90px;
+	height: 45px;
+	transform: translateX(-50%);
+	display: inline-block;
+	background-color: #FFBF00;
+	text-decoration: none;
+	color: black;
+	border-radius: 3px;
+}
+#warningNoSearch p{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+#orderListTitle{
+	font-size: 3.0rem;
+	font-family: CENTURY, serif;
+	margin-bottom: 5px;
+}
+#ceil{
+	position: relative;
+	height: 40px;
+	background-color: #0A0A2A;
+	border-top: 2px solid #FFBF00;
+	border-bottom: 2px solid #FFBF00;
+}
+#ceil p{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 1.7rem;
+	font-family: CENTURY, serif;
+	padding-left: 10px;
+}
+#contents{
+	position: relative;
+	padding: 10px 20px;
+	border-bottom: 2px solid black;
+	margin-bottom: 10px;
+	background-color: rgb(244, 245, 250);
+	font-size: 1.6rem;
+}
+#inform{
+	height: auto;
+	overflow: hidden;
+	border-bottom: 1px dashed black;
+	margin-bottom: 10px;
+}
+#inform p{
+	margin-bottom: 5px;
+}
+.priceInfo{
+	position: relative;
+	padding: 0 15px 15px 0;
+	border-bottom: 1px solid black;
+}
+.roomsName{
+	display: inline-block;
+	width: 160px;
+}
+.roomsPrice{
+	display: inline-block;
+	position: absolute;
+	left: 40%;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 55px;
+}
+.roomsPeriod{
+	display: inline-block;
+	position: absolute;
+	left: 66%;
+	transform: translateX(-50%);
+	text-align: right;
+	width: 70px;
+}
+.roomsResult{
+	position: absolute;
+	right: 0%;
+	margin-right: 15px;
+	display: inline-block;
+}
+.priceInfoMenu{
+	text-align: center;
+	margin-bottom: 10px;
+}
+#allResult{
+	padding: 15px 15px 10px 15px;
+}
+#allResultPrice{
+	font-size: 2.0rem;
+	font-weight: bold;
+	font-family: CENTURY, serif;
+	text-align: right;
+}
+#homeButton{
+	position: absolute;
+	right: 0%;
+	display: inline-block;
+	width: 90px;
+	height: 45px;
+	background-color: #FFBF00;
+	text-decoration: none;
+	color: black;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+#homeButton p{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+
+/* 태블릿 해상도 대응 */
+@media all and (min-device-width:640px) and (max-width:1024px){
+	body{
+		min-width: auto;
+	}
+	main{
+		width: 480px;
+	}
+	section{
+		width: 400px;
+	}
+	#targetForm{
+		height: 100%;
+		width: 100%;
+	}
+	#notice{
+    top: 15%;
+    left: 54%;
+    width: 100%;
+	}
+	.reservationNo{
+		left: 15%;
+	}
+	.password{
+		left: 15%;
+		top: 57%;
+	}
+	.checkForm{
+		left: 65%;
+		height: 22px;
+	}
+	#formSubmit, #formCancle{
+		width: 80px;
+		height: 35px;
+	}
+	#formSubmit{
+		left: 20%;
+	}
+	#formCancle{
+		left: 80%;
+	}
+	#orderlistForm{
+		width: 90vw;
+	}
+	#warningNoSearch h1{
+		width: 95vw;
+		font-size: 1.8rem;
+		overflow: auto;
+	}
+	.roomsPeriod{
+		left: 63%;
+		width: 76px;
+	}
+}
+
+/* 모바일 해상도 대응 */
+@media all and (max-device-width:639px) {
+	body{
+		min-width: auto;
+	}
+	main{
+		width: 900px;
+		height: auto;
+	}
+	section{
+		width: 840px;
+	}
+	#checkWrapper{
+		height: 500px;
+	}
+	#top{
+		height: 60px;
+	}
+	#bottom{
+		height: 450px;
+	}
+	#targetForm{
+		height: 100%;
+		width: 100%;
+	}
+	#notice{
+    top: 15%;
+    left: 54%;
+    width: 100%;
+	}
+	.reservationNo{
+		top: 40%;
+		left: 15%;
+	}
+	.password{
+		left: 15%;
+		top: 55.5%;
+	}
+	.checkForm{
+		left: 67%;
+    height: 46px;
+    width: 250px;
+		border: 2px solid gray;
+	}
+	#buttonWrapper{
+		width: 350px;
+		bottom: 85px;
+	}
+	#formSubmit, #formCancle{
+		width: 195px;
+		height: 80px;
+		border-radius: 5px;
+	}
+	#formSubmit{
+		left: 20%;
+	}
+	#formCancle{
+		left: 80%;
+	}
+	#orderlistForm{
+		width: 90vw;
+	}
+	#warningNoSearch h1{
+		width: 95vw;
+		overflow: auto;
+	}
+	#orderBox{
+		margin-bottom: 200px;
+	}
+	#ceil{
+		height: 80px;
+	}
+	#ceil p{
+		padding-left: 20px;
+	}
+	#inform{
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	}
+	#inform p{
+		margin-bottom: 10px;
+	}
+	.priceInfoMenu{
+		margin-bottom: 20px;
+	}
+	.roomsPrice{
+		left: 33%;
+	}
+	.roomsPeriod{
+		left: 63%;
+		width: 155px;
+	}
+	#homeButton {
+    width: 200px;
+    height: 85px;
+	}
+}

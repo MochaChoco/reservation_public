@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+/* 일반 데스크탑 해상도 대응 */
+body{
+	min-width: 1024px;
+}
+main {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1024px;
+	height: 550px;
+	margin-bottom: 75px;
+}
+section{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 800px;
+}
+section h1{
+	 font-family:CENTURY, serif;
+	 font-size: 3.0rem;
+	 margin-bottom: 5px;
+}
+#formWrapper{
+	position: relative;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+#formLeft, #formRight{
+	position: relative;
+	height: 450px;
+	border-top: 3px solid #A4A4A4;
+	border-bottom: 3px solid #A4A4A4;
+}
+#formLeft{
+	float: left;
+	width: 120px;
+	background-color: #120A2A;
+	color: white;
+	font-size: 16px;
+}
+#formWrapper p{
+	height: 24.4px;
+	font-size: 1.6rem;
+}
+#formRight{
+	float: left;
+	width: calc(100% - 120px);
+	background-color: rgb(244, 245, 250);
+}
+#formRight::after{
+	clear: both;
+}
+textarea{
+	font-size: 1.6rem;
+	box-sizing: border-box;
+}
+input[type="text"], input[type="password"]{
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	-o-appearance: textfield;
+	height: 24.4px;
+	font-size: 1.6rem;
+	background-color: white;
+	border-width: 1px;
+	border-radius: 0;
+	box-sizing: border-box;
+}
+.formName, .formPassword{
+	height: 22px;
+	box-sizing: border-box;
+}
+.formScore{
+	height: 24.4px;
+	font-size: 1.6rem;
+	box-sizing: border-box;
+}
+#formDescription{
+	width: 100%;
+	height: 220px;
+}
+.descriptionLength{
+	position: absolute;
+	top: 85%;
+	right: 5%;
+	font-size: 1.3rem;
+}
+.overflow{
+	color: red;
+}
+.formMargin1{
+	margin-bottom: 18px;
+}
+.formMargin2{
+	margin-bottom: 20px;
+}
+#buttonWrapper{
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 140px;
+	height: 30px;
+}
+#buttonWrapper p{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.6rem;
+}
+#formSubmit, #formCancle{
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	width: 65px;
+	height: 30px;
+	background-color: #424242;
+	color: white;
+	border: 0px;
+	border-radius: 2px;
+}
+#formSubmit:hover, #formCancle:hover{
+	background-color: #FFBF00;
+	color: black;
+}
+#formCancle{
+	left: auto;
+	right: 0;
+}
+
+/* 태블릿 해상도 대응 */
+@media all and (min-device-width:640px) and (max-width:1024px){
+	body{
+		min-width: auto;
+	}
+	main {
+		width: 93.7500vw;
+		height: 600px;
+	}
+	section{
+		width: 93.7500vw;
+	}
+	section h1{
+		 font-family:CENTURY, serif;
+		 font-size: 3.0rem;
+		 margin-bottom: 5px;
+	}
+	#formLeft, #formRight{
+		position: relative;
+		height: 525px;
+		border-top: 3px solid #A4A4A4;
+		border-bottom: 3px solid #A4A4A4;
+	}
+	#formLeft{
+		float: left;
+		width: 140px;
+		background-color: #120A2A;
+		color: white;
+	}
+	#formRight{
+		float: left;
+		width: calc(100% - 140px);
+		background-color: rgb(244, 245, 250);
+	}
+	#formRight::after{
+		clear: both;
+	}
+	#formWrapper p {
+		height: 27.7px;
+	}
+	textarea{
+		border: 1px solid gray;
+	}
+	input[type="text"], input[type="password"]{
+		height: 27.7px;
+		border: 1px solid gray;
+	}
+	.formScore{
+		height: 27.7px;
+	}
+	#formDescription{
+		height: 220px;
+	}
+	.descriptionLength{
+		position: absolute;
+		top: 81.5%;
+		right: 5%;
+	}
+	.formMargin1{
+		margin-bottom: 30px;
+	}
+	.formMargin2{
+		margin-bottom: 33.5px;
+	}
+	#buttonWrapper{
+		width: 165px;
+		bottom: 20px;
+	}
+	#formSubmit, #formCancle{
+		width: 80px;
+		height: 37.5px;
+		border-radius: 3px;
+	}
+}
+
+/* 모바일 해상도 대응 */
+@media all and (max-device-width:639px) {
+	body{
+		min-width: auto;
+	}
+	main {
+		width: 93.7500vw;
+		height: 880px;
+	}
+	section{
+		width: 93.7500vw;
+	}
+	section h1{
+		 font-family:CENTURY, serif;
+		 font-size: 3.0rem;
+		 margin-bottom: 5px;
+	}
+	#formLeft, #formRight{
+		position: relative;
+		height: 750px;
+		border-top: 3px solid #A4A4A4;
+		border-bottom: 3px solid #A4A4A4;
+	}
+	#formLeft{
+		float: left;
+		width: 265px;
+		background-color: #120A2A;
+		color: white;
+	}
+	#formRight{
+		float: left;
+		width: calc(100% - 265px);
+		background-color: rgb(244, 245, 250);
+	}
+	#formRight::after{
+		clear: both;
+	}
+	#formWrapper p {
+		height: 60px;
+	}
+	textarea{
+    border: 1.5px solid gray;
+	}
+	input[type="text"], input[type="password"]{
+		height: 60px;
+		width: 410px;
+    border: 1.5px solid gray;
+	}
+	.formScore{
+		height: 60px;
+		width: 250px;
+	}
+	#formDescription{
+		height: 250px;
+	}
+	.descriptionLength{
+		position: absolute;
+		top: 73.5%;
+		right: 3%;
+	}
+	.formMargin1{
+		margin-bottom: 30px;
+	}
+	.formMargin2{
+		margin-bottom: 34.5px;
+	}
+	#buttonWrapper{
+		width: 370px;
+		bottom: 75px;
+	}
+	#formSubmit, #formCancle{
+		width: 180px;
+		height: 80px;
+		border-radius: 5px;
+	}
+}
